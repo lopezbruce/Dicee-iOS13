@@ -22,7 +22,25 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        let dice1 = randomDice(randomNumber: Int.random(in: 1...6))
+        let dice2 = randomDice(randomNumber: Int.random(in: 1...6))
+
+        diceImageView1.image = UIImage(named: dice1)
+        diceImageView2.image = UIImage(named: dice2)
+    }
     
+    func randomDice(randomNumber: Int) -> String {
+        switch randomNumber {
+        case 1: return "DiceOne"
+        case 2: return "DiceTwo"
+        case 3: return "DiceThree"
+        case 4: return "DiceFour"
+        case 5: return "DiceFive"
+        case 6: return "DiceSix"
+        default: return "DiceOne"
+        }
+    }
     
 }
 
